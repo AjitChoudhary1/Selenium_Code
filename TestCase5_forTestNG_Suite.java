@@ -9,7 +9,7 @@ public class TestCase5_forTestNG_Suite
 	{
 		System.out.println("Myntra Login");
 	}
-	
+
 	@Test
 	public void logout()
 	{

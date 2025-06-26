@@ -9,7 +9,7 @@ public class TestCase4_forTestNG_Suite
 	{
 		System.out.println("Facebook Login");
 	}
-	
+
 	@Test
 	public void logout()
 	{

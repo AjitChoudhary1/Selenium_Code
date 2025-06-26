@@ -7,8 +7,9 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 
-public class Amazon_AddtoCart_ButtonCLick                                           //parent child window popup
+public class AmazonLogin_AddtoWishList_LogOut
 {
 	public static void main(String[] args) throws InterruptedException
 	{
@@ -16,6 +17,33 @@ public class Amazon_AddtoCart_ButtonCLick                                       
         driver.manage().window().maximize();
 
            driver.get("https://www.amazon.in/");
+
+           WebElement e1=     driver.findElement(By.xpath("//div[@class='nav-div'][2]"));
+
+           Actions a1= new Actions(driver);
+               a1.moveToElement(e1).perform();
+
+               Thread.sleep(2000);
+
+   		    WebElement e2=    driver.findElement(By.xpath("//span[@class='nav-action-inner']"));
+   		           e2.click();
+
+           WebElement usrname= driver.findElement(By.name("email"));
+           usrname.sendKeys("918269201125");
+
+       WebElement prscontnu=    driver.findElement(By.id("continue"));
+           prscontnu.click();
+
+           WebElement password=    driver.findElement(By.id("ap_password"));
+           password.sendKeys("Aj@803131");
+
+      WebElement prsSignin=     driver.findElement(By.id("signInSubmit"));
+           prsSignin.click();
+
+           Thread.sleep(3000);
+
+           WebElement addtowishlist1=  driver.findElement(By.xpath("//span[@id='wishListMainButton']"));
+           addtowishlist1.click();
 
            WebElement srchtxtfld=   driver.findElement(By.id("twotabsearchtextbox"));
                    srchtxtfld.sendKeys("iphone 16pro max");
@@ -43,40 +71,14 @@ public class Amazon_AddtoCart_ButtonCLick                                       
                    driver.switchTo().window(childid);
 
                    Thread.sleep(3000);
-         WebElement addtocart=  driver.findElement(By.className("a-declarative"));
-               addtocart.click();
+         WebElement addtowishlist=  driver.findElement(By.xpath("//span[@id='wishListMainButton']"));
+         addtowishlist.click();
 
-               Thread.sleep(3000);
-
-               WebElement pincode=  driver.findElement(By.id("GLUXZipUpdateInput"));
-                   pincode.sendKeys("341301");
-
-                   Thread.sleep(3000);
-
-                   WebElement clickapply=   driver.findElement(By.id("GLUXZipUpdate"));
-                          clickapply.click();
-
-             /*     Thread.sleep(3000);
-            WebElement usrname= driver.findElement(By.name("email"));
-            usrname.sendKeys("919599850867");
-
-        WebElement prscontnu=    driver.findElement(By.id("continue"));
-            prscontnu.click();
+             //     Thread.sleep(3000);
 
 
-            WebElement password=    driver.findElement(By.id("ap_password"));
-            password.sendKeys("@Aj80");
-
-       WebElement prsSignin=     driver.findElement(By.id("signInSubmit"));
-            prsSignin.click();
-
-            Thread.sleep(3000);
-        */
-            WebElement addtocart1=  driver.findElement(By.xpath("//span[@id='submit.add-to-cart']/span/input"));
-            addtocart1.click();
-
-            Thread.sleep(10000);
-                  driver.quit();
+           // Thread.sleep(10000);
+               //   driver.quit();
 
 	}
 

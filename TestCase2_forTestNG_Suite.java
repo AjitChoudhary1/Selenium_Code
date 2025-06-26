@@ -9,7 +9,7 @@ public class TestCase2_forTestNG_Suite
 	{
 		System.out.println("Gmail Login");
 	}
-	
+
 	@Test
 	public void logout()
 	{
